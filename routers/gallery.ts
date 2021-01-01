@@ -8,7 +8,7 @@ export default async function route (req: ServerRequest, hitomi: Client) {
     req.respond({
       status: 400,
       headers: new Headers({ 'Content-Type': 'application/json' }),
-      body: JSON.stringify({ success: false, message: 'provied id not valid (is it number?)' })
+      body: JSON.stringify({ success: false, message: 'provied id not valid (is it number?)' }, null, 2)
     })
     return
   }
@@ -31,13 +31,13 @@ export default async function route (req: ServerRequest, hitomi: Client) {
     req.respond({
       status: 200,
       headers: new Headers({ 'Content-Type': 'application/json' }),
-      body: JSON.stringify(body)
+      body: JSON.stringify(body, null, 2)
     })
   } catch (error) {
     req.respond({
       status: 502,
       headers: new Headers({ 'Content-Type': 'application/json' }),
-      body: JSON.stringify({ sucess: false, message: 'internal server error: ' + error.message })
+      body: JSON.stringify({ sucess: false, message: 'internal server error: ' + error.message }, null, 2)
     })
   }
 }

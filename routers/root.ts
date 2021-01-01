@@ -19,6 +19,6 @@ export default function route (req: ServerRequest) {
           example: '/image/9d9e063c98ebf1d88f10308c0fb279b236c54fba1cd8de5b85d07b1ddb68c696.webp', returns: 'webp binary'
         }
       ]
-    })
+    }, null, 2)
   })
 }
