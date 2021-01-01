@@ -19,9 +19,8 @@ export default async function route (req: ServerRequest, hitomi: Client) {
     })
   } catch (error) {
     req.respond({
-      status: 502,
-      headers: new Headers({ 'Content-Type': 'application/json' }),
-      body: JSON.stringify({ sucess: false, message: error.message }, null, 2)
+      status: 302,
+      headers: new Headers({ 'Location': '?' })
     })
   }
 }

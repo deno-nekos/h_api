@@ -7,7 +7,6 @@
 > this api uses our hitomi module\
 > you can found it here: https://github.com/deno-nekos/hitomi
 
-
 ## api docs
 BaseURL:
 ```
