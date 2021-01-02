@@ -17,6 +17,12 @@ export default function route (req: ServerRequest) {
           path: '/image/<hash: string>.webp',
           description: 'get webp image binary from hash',
           example: '/image/9d9e063c98ebf1d88f10308c0fb279b236c54fba1cd8de5b85d07b1ddb68c696.webp', returns: 'webp binary'
+        },
+        {
+          path: '/galleries?orderBy=<\'recent\'|\'popular\'>&page=<number>&limit=<number>&language=<string>',
+          description: 'fetch gallery list with options',
+          example: '/galleries?orderBy=popular&page=1&limit=10&language=korean',
+          returns: 'gallery ids'
         }
       ]
     }, null, 2)
