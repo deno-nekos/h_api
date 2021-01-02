@@ -34,6 +34,15 @@ export default async function route (req: ServerRequest, hitomi: Client) {
       body: JSON.stringify(body, null, 2)
     })
   } catch (error) {
+    if (error instanceof TypeError) {
+      req.respond({
+        status: 404,
+        headers: new Headers({ 'Content-Type': 'application/json' }),
+        body: JSON.stringify({ success: false, message: 'provied id not found' }, null, 2)
+      })
+      return
+    }
+
     req.respond({
       status: 302,
       headers: new Headers({ 'Location': '?' })
